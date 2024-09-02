@@ -1,0 +1,21 @@
+/*!
+  Sass file for the Core of Little Boxes
+  WP FSE Theme by Tim Green
+*/
+
+/*
+ Core
+*/
+
+@import "theme-core/base";
+@import "theme-core/blocks";
+@import "theme-core/default";
+@import "theme-core/core-categories";
+@import "theme-core/core-navigation";
+@import "theme-core/core-post-nav-links";
+@import "theme-core/core-query-pagination";
+
+@import "theme-core/mixins";
+@import "theme-core/variables";
+@import "theme-core/typography";
+
