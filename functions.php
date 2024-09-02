@@ -36,3 +36,58 @@ function littleboxes_enqueue_stylesheet() {
 }
 add_action( 'wp_enqueue_scripts', 'littleboxes_enqueue_stylesheet' );
 
+/**
+ * Block pattern category
+ */
+function littleboxes_register_block_pattern_categories() {
+
+	register_block_pattern_category(
+		'littleboxes-pages',
+		array(
+			'label'       => __( 'Pages', 'littleboxes' ),
+			'description' => __( 'Full page patterns included with the littleboxes theme', 'littleboxes' ),
+		)
+	);
+	register_block_pattern_category(
+		'littleboxes-headers',
+		array(
+			'label'       => __( 'Headers', 'littleboxes' ),
+			'description' => __( 'Header patterns included with the littleboxes theme', 'littleboxes' ),
+		)
+	);
+
+	register_block_pattern_category(
+		'littleboxes-heroes',
+		array(
+			'label'       => __( 'Heroes', 'littleboxes' ),
+			'description' => __( 'Hero patterns included with the littleboxes theme', 'littleboxes' ),
+		)
+	);
+
+	register_block_pattern_category(
+		'littleboxes-footers',
+		array(
+			'label'       => __( 'Footers', 'littleboxes' ),
+			'description' => __( 'Footer patterns included with the littleboxes theme', 'littleboxes' ),
+		)
+	);
+
+	register_block_pattern_category(
+		'littleboxes-posts',
+		array(
+			'label'       => __( 'Posts', 'littleboxes' ),
+			'description' => __( 'Post patterns included with the littleboxes theme', 'littleboxes' ),
+		)
+	);
+
+	register_block_pattern_category(
+		'littleboxes-portfolios',
+		array(
+			'label'       => __( 'Portfolios', 'littleboxes' ),
+			'description' => __( 'Portfolio patterns included with the littleboxes theme', 'littleboxes' ),
+		)
+	);
+
+}
+
+add_action( 'init', 'littleboxes_register_block_pattern_categories' );
