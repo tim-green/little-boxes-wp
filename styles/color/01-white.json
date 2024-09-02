@@ -1,0 +1,31 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+	"title": "Black",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"color": "#E3E3E3",
+					"name": "Base",
+					"slug": "base"
+				},
+				{
+					"color": "#C0BBBB",
+					"name": "Contrast",
+					"slug": "contrast"
+				},
+				{
+					"color": "#6C6C6C",
+					"name": "Primary",
+					"slug": "primary"
+				},
+				{
+					"color": "#080808",
+					"name": "Secondary",
+					"slug": "secondary"
+				}
+			]
+		}
+	}
+}
