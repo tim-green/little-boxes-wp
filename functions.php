@@ -123,3 +123,30 @@ function littleboxes_register_block_styles() {
 }
 add_action( 'init', 'littleboxes_register_block_styles' );
 
+/**
+ * Load custom block styles only when the block is used
+ */
+function littleboxes_enqueue_custom_block_styles() {
+
+	// Scan the css folder to locate block styles.
+	$files = glob( get_template_directory() . '/build/*.min.css' );
+
+	foreach ( $files as $file ) {
+
+		// Get the filename and core block name.
+		$filename   = basename( $file, '.css' );
+		$block_name = str_replace( 'core-', 'core/', $filename );
+
+		wp_enqueue_block_style(
+			$block_name,
+			array(
+				'handle' => "littleboxes-block-{$filename}",
+				'src'    => get_theme_file_uri( "bulid/{$filename}.min.css" ),
+				'path'   => get_theme_file_path( "bulid/{$filename}.min.css" ),
+			)
+		);
+	}
+}
+add_action( 'init', 'littleboxes_enqueue_custom_block_styles' );
+
+
