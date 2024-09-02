@@ -25,3 +25,14 @@ if ( ! function_exists( 'littleboxes_setup' ) ) {
 	}
 }
 add_action( 'after_setup_theme', 'littleboxes_setup' );
+
+/**
+ * Enqueue stylesheet
+ */
+function littleboxes_enqueue_stylesheet() {
+
+	wp_enqueue_style( 'littleboxes-style', get_template_directory_uri() . '/build/app.min.css', array(), wp_get_theme()->get( 'Version' ) );
+
+}
+add_action( 'wp_enqueue_scripts', 'littleboxes_enqueue_stylesheet' );
+
