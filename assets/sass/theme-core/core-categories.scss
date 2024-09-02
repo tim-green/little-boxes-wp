@@ -1,0 +1,40 @@
+/*
+
+  Core Categories
+  +
+
+*/
+
+.is-style-category-block {
+    padding: 0;
+    list-style-type: none;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-columns: 1fr;
+    
+    .cat-item {
+        background: #d4d9df;
+        text-align: center;
+        padding: 3.5em 1em;
+        color: rgba(0, 0, 0, .5019607843137255);
+        font-size: 12px;
+            a {
+                display: block;
+                color: #000;
+                font-size: 16px;
+            }
+        }
+}
+
+@media (max-width: 600px) {
+    .is-style-category-block {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 328px) {
+    .is-style-category-block {
+        grid-template-columns: 1fr;
+    }
+}
