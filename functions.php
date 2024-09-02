@@ -91,3 +91,35 @@ function littleboxes_register_block_pattern_categories() {
 }
 
 add_action( 'init', 'littleboxes_register_block_pattern_categories' );
+
+/**
+ * Add block style variations
+ */
+function littleboxes_register_block_styles() {
+
+	$block_styles = array(
+		'core/query-pagination' => array(
+			'pagination-button' => __( 'LittleBoxes', 'littleboxes' ),
+		),
+		'core/categories' => array(
+			'category-block' => __( 'LittleBoxes', 'littleboxes' ),
+		),
+		'core/post-navigation-link' => array(
+			'nav-block' => __( 'LittleBoxes', 'littleboxes' ),
+		),
+	);
+
+	foreach ( $block_styles as $block => $styles ) {
+		foreach ( $styles as $style_name => $style_label ) {
+			register_block_style(
+				$block,
+				array(
+					'name'  => $style_name,
+					'label' => $style_label,
+				)
+			);
+		}
+	}
+}
+add_action( 'init', 'littleboxes_register_block_styles' );
+
